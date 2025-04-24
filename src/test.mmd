@@ -1,0 +1,23 @@
+flowchart TD
+  A[Start Simulation] --> B[Set Cache Configuration]
+  B --> C[Generate Access Pattern]
+  C --> D{More Addresses?}
+  D -->|Yes| E[Access Next Memory Address]
+  E --> F[Extract Set Index, Tag, and Block Offset]
+  F --> G{Set Contains Matching Tag?}
+  
+  G -->|Yes| H[✅ HIT - Update Usage (LRU)]
+  G -->|No| I{Any Empty Way in Set?}
+  
+  I -->|Yes| J[Fill Empty Slot with Tag]
+  I -->|No| K[Use LRU to Replace Old Block]
+
+  H --> L[Update Statistics: Hits, Accesses]
+  J --> L
+  K --> L
+
+  L --> M[Update Cache State Display]
+  M --> N[Highlight Access in UI]
+  N --> D
+
+  D -->|No| O[End Simulation]
