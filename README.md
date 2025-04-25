@@ -2,7 +2,7 @@
 
 An interactive web-based visualization tool for understanding CPU cache behavior and memory access patterns.
 
-![Screenshot of Cache Simulator](https://placeholder.com/cache-simulator-screenshot.png)
+![Screenshot of Cache Simulator](./public/image.png)
 
 ## Overview
 
